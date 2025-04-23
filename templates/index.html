@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CBSE Question Paper Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="dark-mode-toggle">
+            <button id="darkModeToggle" class="btn btn-sm">
+                <i class="bi bi-moon-fill"></i>
+            </button>
+        </div>
+        
+        <h1 class="text-center mb-4">CBSE Question Paper Generator</h1>
+        
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <form id="paperForm" class="card p-4 mb-5">
+                    <div class="mb-3">
+                        <label for="subject" class="form-label">Subject</label>
+                        <select class="form-select" id="subject" required>
+                            <option value="">Select Subject</option>
+                            <option value="Science">Science</option>
+                            <option value="Mathematics">Mathematics</option>
+                            <option value="English">English</option>
+                            <option value="Social Science">Social Science</option>
+                            <option value="Hindi">Hindi</option>
+                            <option value="Physics">Physics</option>
+                            <option value="Chemistry">Chemistry</option>
+                            <option value="Biology">Biology</option>
+                            <option value="Computer Science">Computer Science</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="class" class="form-label">Class</label>
+                        <select class="form-select" id="class" required>
+                            <option value="">Select Class</option>
+                            <option value="9">9th</option>
+                            <option value="10">10th</option>
+                            <option value="11">11th</option>
+                            <option value="12">12th</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label">Number of Questions</label>
+                        <div class="row g-3">
+                            <div class="col-6">
+                                <label for="mcq_count" class="small text-muted">MCQs (1 mark)</label>
+                                <input type="number" class="form-control" id="mcq_count" min="0" value="" required>
+                            </div>
+                            <div class="col-6">
+                                <label for="very_short_count" class="small text-muted">Very Short (2 marks)</label>
+                                <input type="number" class="form-control" id="very_short_count" min="0" value="" required>
+                            </div>
+                            <div class="col-6">
+                                <label for="short_count" class="small text-muted">Short (3 marks)</label>
+                                <input type="number" class="form-control" id="short_count" min="0" value="" required>
+                            </div>
+                            <div class="col-6">
+                                <label for="long_count" class="small text-muted">Long (5 marks)</label>
+                                <input type="number" class="form-control" id="long_count" min="0" value="" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">
+                        <i class="bi bi-file-earmark-text me-2"></i>Generate Paper
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div id="paperOutput" class="mt-5 d-none">
+            <!-- Question paper will be displayed here -->
+        </div>
+        
+        <div id="actionButtons" class="text-center mb-5 d-none">
+            <p class="mb-3" style="color: #0A1133; font-weight: 500;">💡 To download paper as PDF, click Print and select "Save as PDF" in printer options</p>
+            <button id="printButton" class="btn btn-success">
+                <i class="bi bi-printer me-2"></i>Print Paper
+            </button>
+        </div>
+
+        <div class="text-center mb-4 mt-5">
+            <p class="text-muted watermark">Made By Soham Wagh ❤️</p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html> 

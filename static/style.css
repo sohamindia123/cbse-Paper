@@ -1,0 +1,404 @@
+/* Dark mode variables */
+:root {
+    --dark-red: #92140C;
+    --floral-white: #FFF8F0;
+    --peach: #FFCF99;
+    --space-cadet: #111D4A;
+    
+    /* New dark mode palette */
+    --russian-violet: #22162B;
+    --purple-heart: #451F55;
+    --french-lilac: #724E91;
+    --paradise-pink: #E54F6D;
+    --sunglow: #F8C630;
+    
+    /* Default light mode */
+    --bg-color: var(--floral-white);
+    --text-color: var(--space-cadet);
+    --card-bg: white;
+    --input-bg: white;
+    --border-color: var(--peach);
+    --section-bg: var(--floral-white);
+    --option-bg: var(--floral-white);
+    --instruction-bg: var(--floral-white);
+    --accent-color: var(--dark-red);
+    --button-primary: var(--space-cadet);
+    --button-hover: #1a2a6c;
+}
+
+/* Dark mode colors using the new palette */
+[data-theme="dark"] {
+    --bg-color: var(--russian-violet);
+    --text-color: #ffffff;
+    --card-bg: var(--purple-heart);
+    --input-bg: var(--russian-violet);
+    --border-color: var(--french-lilac);
+    --section-bg: rgba(114, 78, 145, 0.7);
+    --option-bg: rgba(34, 22, 43, 0.8);
+    --instruction-bg: var(--purple-heart);
+    --accent-color: var(--paradise-pink);
+    --button-primary: var(--french-lilac);
+    --button-hover: var(--paradise-pink);
+    --badge-color: var(--sunglow);
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+    max-width: 1200px;
+}
+
+.card {
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    border: none;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    background-color: var(--card-bg);
+}
+
+.card:hover {
+    box-shadow: 0 0 25px rgba(0,0,0,0.15);
+}
+
+.form-label {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.form-select, .form-control {
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    padding: 10px 15px;
+    transition: all 0.3s;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+}
+
+.form-select:focus, .form-control:focus {
+    border-color: var(--border-color);
+    box-shadow: 0 0 0 0.2rem rgba(255, 207, 153, 0.25);
+}
+
+.btn-primary {
+    background-color: var(--button-primary);
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: var(--button-hover);
+    transform: translateY(-2px);
+}
+
+.btn-success {
+    background-color: var(--accent-color);
+    border: none;
+}
+
+.btn-success:hover {
+    background-color: var(--button-hover);
+}
+
+.btn-info {
+    background-color: var(--button-primary);
+    border: none;
+    color: white;
+}
+
+.btn-info:hover {
+    background-color: var(--button-hover);
+    color: white;
+}
+
+#paperOutput {
+    background: var(--card-bg);
+    padding: 2.5rem;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    margin-bottom: 3rem;
+    color: var(--text-color);
+    line-height: 1.6;
+    font-size: 1.05rem;
+}
+
+.question {
+    margin-bottom: 1.8rem;
+    padding-left: 1rem;
+    padding-right: 80px;
+    border-left: 3px solid var(--accent-color);
+    page-break-inside: avoid;
+    break-inside: avoid;
+    color: var(--text-color);
+    font-weight: 400;
+    position: relative;
+}
+
+.section-header {
+    background: var(--section-bg);
+    padding: 0.8rem 1rem;
+    margin: 1.5rem 0;
+    font-weight: 600;
+    border-radius: 6px;
+    color: var(--text-color);
+    border-left: 4px solid var(--accent-color);
+    page-break-after: avoid;
+    page-break-before: auto;
+    break-after: avoid;
+    break-before: auto;
+}
+
+.option {
+    margin-left: 2rem;
+    margin-top: 0.7rem;
+    padding: 0.4rem 0.8rem;
+    background-color: var(--option-bg);
+    border-radius: 4px;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    font-weight: 400;
+}
+
+.instructions {
+    background-color: var(--instruction-bg);
+    padding: 1.2rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--border-color);
+}
+
+.instructions h5 {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.instructions ol {
+    padding-left: 1.5rem;
+}
+
+.error {
+    color: var(--dark-red);
+    font-style: italic;
+}
+
+.badge {
+    background-color: var(--badge-color) !important;
+    color: var(--russian-violet) !important;
+    font-weight: 600 !important;
+    padding: 0.35em 0.65em !important;
+}
+
+.text-center.mb-4.mt-5 {
+    margin-bottom: 5rem !important;
+}
+
+.watermark {
+    opacity: 0.9;
+    transition: opacity 0.3s;
+    font-size: 25px;
+    font-weight: bold;
+    color: var(--accent-color) !important;
+    margin-bottom: 3rem;
+}
+
+.watermark:hover {
+    opacity: 1;
+}
+
+/* Dark mode toggle button */
+.dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+#darkModeToggle {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#darkModeToggle:hover {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+@media print {
+    /* Hide the main page title */
+    h1.text-center.mb-4 {
+        display: none !important;
+    }
+    
+    /* Hide any other elements that shouldn't be printed */
+    .container > h1:first-child {
+        display: none !important;
+    }
+    
+    /* Only show the paper output */
+    .container > *:not(#paperOutput):not(#actionButtons) {
+        display: none !important;
+    }
+    
+    /* Rest of your print styles remain the same */
+    body {
+        background-color: white;
+        color: black !important;
+        font-weight: 500 !important;
+    }
+    
+    p, h1, h2, h3, h4, h5, h6, li, div, span {
+        color: black !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    
+    #paperOutput::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='100'><text x='0' y='50' font-family='Arial' font-size='20' font-weight='bold' fill='%2392140C' opacity='0.2' transform='rotate(-20 50,50)'>Made By Soham Wagh ❤️</text></svg>");
+        background-repeat: no-repeat;
+        background-position: bottom right;
+        pointer-events: none;
+        z-index: 9999;
+        opacity: 0.3;
+    }
+    
+    @page {
+        margin: 1cm;
+        size: auto;
+    }
+    
+    @page :first {
+        margin-top: 2cm;
+    }
+    
+    @page :left {
+        @bottom-left {
+            content: "Made By Soham Wagh ❤️";
+            font-family: Arial;
+            font-size: 12pt;
+            color: #92140C;
+            opacity: 0.3;
+        }
+    }
+    
+    @page :right {
+        @bottom-right {
+            content: "Made By Soham Wagh ❤️";
+            font-family: Arial;
+            font-size: 12pt;
+            color: #92140C;
+            opacity: 0.3;
+        }
+    }
+    
+    .container {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    #paperForm, .btn, #actionButtons {
+        display: none !important;
+    }
+    
+    #paperOutput {
+        box-shadow: none;
+        padding: 0;
+        position: relative;
+        color: black !important;
+    }
+    
+    .section-header {
+        page-break-after: avoid !important;
+        page-break-before: auto !important;
+        break-after: avoid !important;
+        break-before: auto !important;
+        background-color: #f1f8ff !important;
+        color: black !important;
+        font-weight: 700 !important;
+    }
+    
+    .option {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+    }
+    
+    .watermark {
+        display: none;
+    }
+    
+    .question {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+    }
+    
+    .question + .question {
+        margin-top: 1.5rem;
+    }
+    
+    .question .options {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+    }
+    
+    .section-header {
+        margin-top: 2rem !important;
+    }
+}
+
+.question strong {
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+.small.text-muted {
+    color: var(--button-primary) !important;
+    font-weight: 500;
+}
+
+.marks-indicator {
+    display: inline-block;
+    background-color: #0A1133;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    position: absolute;
+    right: 0;
+    top: 0;
+    min-width: 70px;
+    text-align: center;
+}
+
+[data-theme="dark"] .marks-indicator {
+    background-color: var(--french-lilac);
+}
+
+@media print {
+    .marks-indicator {
+        background-color: #0A1133 !important;
+        color: white !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+} 
